@@ -69,9 +69,9 @@ public class DownloadService extends Service {
     }
     class DownloadBinder extends Binder{
         public void startDownload(String url){
-            if (downloadTask==null){
-                downloadUrl =url;
-                downloadTask=new DownloadTask(listener);
+            if (downloadTask == null){
+                downloadUrl = url;
+                downloadTask = new DownloadTask(listener);
                 downloadTask.execute(downloadUrl);
                 startForeground(1,getNotification("Downloading...",0));
                 Toast.makeText(DownloadService.this,"Downloading...",Toast.LENGTH_SHORT).show();
