@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FirstCoding.iml" filepath="$PROJECT_DIR$/FirstCoding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidthreadtest/androidthreadtest.iml" filepath="$PROJECT_DIR$/androidthreadtest/androidthreadtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/broadcastreceiver/broadcastreceiver.iml" filepath="$PROJECT_DIR$/broadcastreceiver/broadcastreceiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cameraalbumtest/cameraalbumtest.iml" filepath="$PROJECT_DIR$/cameraalbumtest/cameraalbumtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contactstest/contactstest.iml" filepath="$PROJECT_DIR$/contactstest/contactstest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmenttest/fragmenttest.iml" filepath="$PROJECT_DIR$/fragmenttest/fragmenttest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myservice/myservice.iml" filepath="$PROJECT_DIR$/myservice/myservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/networktest/networktest.iml" filepath="$PROJECT_DIR$/networktest/networktest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notificationtest/notificationtest.iml" filepath="$PROJECT_DIR$/notificationtest/notificationtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/palyaudiotest/palyaudiotest.iml" filepath="$PROJECT_DIR$/palyaudiotest/palyaudiotest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/playvideotest/playvideotest.iml" filepath="$PROJECT_DIR$/playvideotest/playvideotest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/runtimepermissiontest/runtimepermissiontest.iml" filepath="$PROJECT_DIR$/runtimepermissiontest/runtimepermissiontest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/savedatatest/savedatatest.iml" filepath="$PROJECT_DIR$/savedatatest/savedatatest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servicebestpractice/servicebestpractice.iml" filepath="$PROJECT_DIR$/servicebestpractice/servicebestpractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sharedpreferencestest/sharedpreferencestest.iml" filepath="$PROJECT_DIR$/sharedpreferencestest/sharedpreferencestest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sqlitetest/sqlitetest.iml" filepath="$PROJECT_DIR$/sqlitetest/sqlitetest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uselitepaltest/uselitepaltest.iml" filepath="$PROJECT_DIR$/uselitepaltest/uselitepaltest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webviewtest/webviewtest.iml" filepath="$PROJECT_DIR$/webviewtest/webviewtest.iml" />
+    </modules>
+  </component>
+</project>
