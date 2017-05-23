@@ -50,7 +50,7 @@ public class DownloadAsyncTask extends AsyncTask<String,Integer,Integer> {
             String fileName = downloadUrl.substring(downloadUrl.lastIndexOf("/"));
             String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
                     .getPath();
-            file = new File(fileName+directory);
+            file = new File(directory+fileName);
             if (file.exists()){
                 downloadedLength= file.length();//将当前文件长度付给已经下载的变量
             }
@@ -60,7 +60,7 @@ public class DownloadAsyncTask extends AsyncTask<String,Integer,Integer> {
             //如果文件的长度为0说明文件有问题 下载失败
             if (contentLength==0){
                 return TYPE_FAILED;
-            }else if (downloadedLength==contentLength){
+            }else if (contentLength==downloadedLength){
                 //已经下载的字节数与总长度相同 说明文件下载成功
                 return TYPE_SUCCESS;
             }
@@ -76,30 +76,32 @@ public class DownloadAsyncTask extends AsyncTask<String,Integer,Integer> {
 
             if (response!=null){
                 is = response.body().byteStream();
+
                 rw = new RandomAccessFile(file, "rw");
+
+                rw.seek(downloadedLength);//跳过已经下载的文件
 
                 byte[] bytes = new byte[1024];
                 int len;
                 int total=0;
                 while((len=is.read(bytes))!=-1){
-                    if (isPaused){
-                        return TYPE_PAUSED;
-                    }else if (isCanceled){
+                    if (isCanceled){
                         return TYPE_CANCELED;
+                    }else if (isPaused){
+                        return TYPE_PAUSED;
                     }else {
                         total+=len;
-                        rw.write(bytes,0,total);
+                        rw.write(bytes,0,len);
 
                         //计算下载的百分比
                         int progress = (int) ((total+downloadedLength)*100/contentLength);
                         publishProgress(progress);
                     }
                 }
+                response.body().close();
+
+                return TYPE_SUCCESS;
             }
-            response.body().close();
-
-            return TYPE_SUCCESS;
-
 
         } catch (Exception e) {
             e.printStackTrace();

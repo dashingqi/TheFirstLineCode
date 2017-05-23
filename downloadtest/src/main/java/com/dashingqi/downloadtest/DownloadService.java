@@ -7,9 +7,14 @@ import android.app.Service;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Binder;
+import android.os.Environment;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
+
+import java.io.File;
+
+import static android.R.id.progress;
 
 public class DownloadService extends Service {
 
@@ -21,7 +26,7 @@ public class DownloadService extends Service {
         @Override
         public void onProgress(int progress) {
             getNotificationManager().
-                    notify(1,getNotification("Dowunloading....",progress));
+                    notify(1,getNotification("Downloading....",progress));
 
         }
 
@@ -73,6 +78,8 @@ public class DownloadService extends Service {
                 downloadAsyncTask = new DownloadAsyncTask(listener);
                 //执行AsyncTask 将地址传入
                 downloadAsyncTask.execute(downloadUrl);
+                startForeground(1,getNotification("Downloading....",0));
+                Toast.makeText(DownloadService.this,"DownLoading.....",Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -86,8 +93,21 @@ public class DownloadService extends Service {
         public void cancelDownload(){
 
             if (downloadAsyncTask!=null){
+                //在下载过程中取消下载
                 downloadAsyncTask.canceledDownload();
-
+            }else{
+                //是在下载的过程中暂停下载时取消下载
+                if (downloadUrl!=null){
+                    String fileName = downloadUrl.substring(downloadUrl.lastIndexOf("/"));
+                    String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
+                    File file = new File(directory + fileName);
+                    if (file.exists()){
+                        file.delete();
+                    }
+                    getNotificationManager().cancel(1);
+                    stopForeground(true);
+                    Toast.makeText(DownloadService.this,"Canceled",Toast.LENGTH_SHORT).show();
+                }
             }
 
         }
