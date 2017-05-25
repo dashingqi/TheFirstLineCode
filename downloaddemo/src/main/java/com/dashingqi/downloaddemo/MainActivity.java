@@ -1,4 +1,4 @@
-package com.dashingqi.downloadtest;
+package com.dashingqi.downloaddemo;
 
 import android.Manifest;
 import android.content.ComponentName;
@@ -19,14 +19,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button startDownload;
     private Button pausedDownload;
     private Button cancelDownload;
-    private DownloadService.DownloadBinder downloadBinder;
+
+    private DownLoadService.DownLoadBinder mBinder ;
+
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            //获取到通信的桥梁 binder
-            downloadBinder = (DownloadService.DownloadBinder) service;
 
+            mBinder = (DownLoadService.DownLoadBinder) service;
         }
 
         @Override
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +44,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startDownload.setOnClickListener(this);
         pausedDownload.setOnClickListener(this);
         cancelDownload.setOnClickListener(this);
+        Intent intent = new Intent(MainActivity.this,DownLoadService.class);
+        startService(intent);//开启服务
+        bindService(intent,connection,BIND_AUTO_CREATE);//使服务长期在后台运行
 
-
-        Intent intent = new Intent(this, DownloadService.class);
-        startService(intent);//开启服务 在后台运行
-        bindService(intent,connection,BIND_AUTO_CREATE);//绑定服务 活动与服务之间通信
-        //进行权限的申请判断
+        //进行服务的申请
         if (ContextCompat.checkSelfPermission(MainActivity.this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(MainActivity.this,
@@ -68,35 +67,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.start_download:
                 String url = "https://raw.githubusercontent.com/guolindev/eclipse/master/eclipse-inst-win64.exe";
-                downloadBinder.startDownload(url);
+                mBinder.startDownload(url);
                 break;
             case R.id.pause_download:
-                downloadBinder.pausedDownload();
+                mBinder.pauseDownload();
                 break;
             case R.id.cancel_download:
-                downloadBinder.cancelDownload();
-                break;
-            default:
+                mBinder.cancelDownload();
                 break;
         }
 
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unbindService(connection);//解绑服务 防止内存泄露
-    }
+    //服务申请的回调方法
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
         switch (requestCode){
             case 1:
-                if (grantResults.length>0 && grantResults[0]!=PackageManager.PERMISSION_GRANTED){
-                    Toast.makeText(MainActivity.this,
-                            "申请权限被拒绝无法使用该应用",Toast.LENGTH_SHORT).show();
-                    finish();
+                if (grantResults.length>0&&grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(MainActivity.this,"权限被拒绝应用无法使用",Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
@@ -104,4 +93,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(connection);//解绑服务 防止内存泄露
+    }
 }

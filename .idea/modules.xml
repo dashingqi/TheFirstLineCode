@@ -8,8 +8,11 @@
       <module fileurl="file://$PROJECT_DIR$/broadcastreceiver/broadcastreceiver.iml" filepath="$PROJECT_DIR$/broadcastreceiver/broadcastreceiver.iml" />
       <module fileurl="file://$PROJECT_DIR$/cameraalbumtest/cameraalbumtest.iml" filepath="$PROJECT_DIR$/cameraalbumtest/cameraalbumtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/contactstest/contactstest.iml" filepath="$PROJECT_DIR$/contactstest/contactstest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/downloaddemo/downloaddemo.iml" filepath="$PROJECT_DIR$/downloaddemo/downloaddemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/downloadtest/downloadtest.iml" filepath="$PROJECT_DIR$/downloadtest/downloadtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmenttest/fragmenttest.iml" filepath="$PROJECT_DIR$/fragmenttest/fragmenttest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intenttest/intenttest.iml" filepath="$PROJECT_DIR$/intenttest/intenttest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/materialtest/materialtest.iml" filepath="$PROJECT_DIR$/materialtest/materialtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/myservice/myservice.iml" filepath="$PROJECT_DIR$/myservice/myservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/networktest/networktest.iml" filepath="$PROJECT_DIR$/networktest/networktest.iml" />
       <module fileurl="file://$PROJECT_DIR$/notificationtest/notificationtest.iml" filepath="$PROJECT_DIR$/notificationtest/notificationtest.iml" />
