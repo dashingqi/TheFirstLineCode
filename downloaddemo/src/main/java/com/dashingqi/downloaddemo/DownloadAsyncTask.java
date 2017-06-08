@@ -58,7 +58,6 @@ public class DownloadAsyncTask extends AsyncTask<String,Integer,Integer> {
                 return TYPE_SUCCESS;
             }
 
-
             //进行断点续传下载
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()

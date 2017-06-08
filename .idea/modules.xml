@@ -8,9 +8,12 @@
       <module fileurl="file://$PROJECT_DIR$/broadcastreceiver/broadcastreceiver.iml" filepath="$PROJECT_DIR$/broadcastreceiver/broadcastreceiver.iml" />
       <module fileurl="file://$PROJECT_DIR$/cameraalbumtest/cameraalbumtest.iml" filepath="$PROJECT_DIR$/cameraalbumtest/cameraalbumtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/contactstest/contactstest.iml" filepath="$PROJECT_DIR$/contactstest/contactstest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/download1/download1.iml" filepath="$PROJECT_DIR$/download1/download1.iml" />
       <module fileurl="file://$PROJECT_DIR$/downloaddemo/downloaddemo.iml" filepath="$PROJECT_DIR$/downloaddemo/downloaddemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/downloadfirst/downloadfirst.iml" filepath="$PROJECT_DIR$/downloadfirst/downloadfirst.iml" />
       <module fileurl="file://$PROJECT_DIR$/downloadtest/downloadtest.iml" filepath="$PROJECT_DIR$/downloadtest/downloadtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmenttest/fragmenttest.iml" filepath="$PROJECT_DIR$/fragmenttest/fragmenttest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imagelook/imagelook.iml" filepath="$PROJECT_DIR$/imagelook/imagelook.iml" />
       <module fileurl="file://$PROJECT_DIR$/intenttest/intenttest.iml" filepath="$PROJECT_DIR$/intenttest/intenttest.iml" />
       <module fileurl="file://$PROJECT_DIR$/materialtest/materialtest.iml" filepath="$PROJECT_DIR$/materialtest/materialtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/myservice/myservice.iml" filepath="$PROJECT_DIR$/myservice/myservice.iml" />
@@ -18,6 +21,9 @@
       <module fileurl="file://$PROJECT_DIR$/notificationtest/notificationtest.iml" filepath="$PROJECT_DIR$/notificationtest/notificationtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/palyaudiotest/palyaudiotest.iml" filepath="$PROJECT_DIR$/palyaudiotest/palyaudiotest.iml" />
       <module fileurl="file://$PROJECT_DIR$/playvideotest/playvideotest.iml" filepath="$PROJECT_DIR$/playvideotest/playvideotest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/processtest/processtest.iml" filepath="$PROJECT_DIR$/processtest/processtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclertest/recyclertest.iml" filepath="$PROJECT_DIR$/recyclertest/recyclertest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" filepath="$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/runtimepermissiontest/runtimepermissiontest.iml" filepath="$PROJECT_DIR$/runtimepermissiontest/runtimepermissiontest.iml" />
       <module fileurl="file://$PROJECT_DIR$/savedatatest/savedatatest.iml" filepath="$PROJECT_DIR$/savedatatest/savedatatest.iml" />
       <module fileurl="file://$PROJECT_DIR$/servicebestpractice/servicebestpractice.iml" filepath="$PROJECT_DIR$/servicebestpractice/servicebestpractice.iml" />
